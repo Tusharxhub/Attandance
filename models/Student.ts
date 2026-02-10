@@ -22,6 +22,6 @@ const StudentSchema = new Schema({
     },
 }, { timestamps: true });
 
-const Student = models.Student || model('Student', StudentSchema);
+StudentSchema.index({ id: 1 });
 
-export default Student;
+export default models.Student || model('Student', StudentSchema);

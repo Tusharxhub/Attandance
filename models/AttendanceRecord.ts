@@ -26,6 +26,4 @@ const AttendanceRecordSchema = new Schema({
 // Compound index for unique attendance per student per period per day
 AttendanceRecordSchema.index({ studentId: 1, date: 1, periodId: 1 }, { unique: true });
 
-const AttendanceRecord = models.AttendanceRecord || model('AttendanceRecord', AttendanceRecordSchema);
-
-export default AttendanceRecord;
+export default models.AttendanceRecord || model('AttendanceRecord', AttendanceRecordSchema);
